@@ -1,0 +1,63 @@
+{
+    "apiVersion": "v1",
+    "kind": "Namespace",
+    "metadata": {
+        "annotations": {
+            "operator-sdk/primary-resource": "default/testconfig-sample",
+            "operator-sdk/primary-resource-type": "TestcOnfig.cache.example.com"
+        },
+        "creationTimestamp": "2023-05-19T10:46:20Z",
+        "deletionTimestamp": "2023-05-19T11:02:02Z",
+        "labels": {
+            "kubernetes.io/metadata.name": "test-config"
+        },
+        "name": "test-config",
+        "resourceVersion": "935028",
+        "uid": "ebb34f5b-76c6-46b1-a0db-d836405f2e23"
+    },
+    "spec": {
+        "finalizers": [
+            
+        ]
+    },
+    "status": {
+        "conditions": [
+            {
+                "lastTransitionTime": "2023-05-19T11:02:07Z",
+                "message": "Discovery failed for some groups, 1 failing: unable to retrieve the complete list of server APIs: packages.operators.coreos.com/v1: stale GroupVersion discovery: packages.operators.coreos.com/v1",
+                "reason": "DiscoveryFailed",
+                "status": "True",
+                "type": "NamespaceDeletionDiscoveryFailure"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T11:02:08Z",
+                "message": "All legacy kube types successfully parsed",
+                "reason": "ParsedGroupVersions",
+                "status": "False",
+                "type": "NamespaceDeletionGroupVersionParsingFailure"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T11:02:09Z",
+                "message": "All content successfully deleted, may be waiting on finalization",
+                "reason": "ContentDeleted",
+                "status": "False",
+                "type": "NamespaceDeletionContentFailure"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T11:02:09Z",
+                "message": "All content successfully removed",
+                "reason": "ContentRemoved",
+                "status": "False",
+                "type": "NamespaceContentRemaining"
+            },
+            {
+                "lastTransitionTime": "2023-05-19T11:02:08Z",
+                "message": "All content-preserving finalizers finished",
+                "reason": "ContentHasNoFinalizers",
+                "status": "False",
+                "type": "NamespaceFinalizersRemaining"
+            }
+        ],
+        "phase": "Terminating"
+    }
+}

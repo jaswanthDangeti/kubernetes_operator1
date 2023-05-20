@@ -1,0 +1,6 @@
+---
+# defaults file for Ansibledev
+deployment: test
+size: 1
+image: nginx
+port: 80

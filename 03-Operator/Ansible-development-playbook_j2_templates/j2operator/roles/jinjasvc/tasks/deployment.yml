@@ -1,0 +1,5 @@
+--- 
+- name: Create a Deployment from a predifined file
+  kubernetes.core.k8s:
+    state: "{{ state }}"
+    template: deployment.j2

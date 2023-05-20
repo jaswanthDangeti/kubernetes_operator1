@@ -1,0 +1,14 @@
+apiVersion: cache.example.com/v1alpha1
+kind: Ansibledev
+metadata:
+  labels:
+    app.kubernetes.io/name: ansibledev
+    app.kubernetes.io/instance: ansibledev-sample
+    app.kubernetes.io/part-of: ansible-development-op
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: ansible-development-op
+  name: ansibledev-sample
+spec:
+  deployment: deploymenttest
+  size: 1
+  image: nginx

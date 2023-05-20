@@ -1,0 +1,12 @@
+apiVersion: cache.example.com/v1alpha1
+kind: MyMemcached
+metadata:
+  labels:
+    app.kubernetes.io/name: mymemcached
+    app.kubernetes.io/instance: mymemcached-sample
+    app.kubernetes.io/part-of: my-memcahced-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: my-memcahced-operator
+  name: mymemcached-sample
+spec:
+  size: 2

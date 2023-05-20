@@ -1,0 +1,16 @@
+apiVersion: cache.example.com/v1alpha1
+kind: Webapp
+metadata:
+  labels:
+    app.kubernetes.io/name: webapp
+    app.kubernetes.io/instance: webapp-sample
+    app.kubernetes.io/part-of: webapp-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: webapp-operator
+  name: webapp-sample
+spec:
+  size: 3
+  image: nginx
+  port: 80
+  imagepullpolicy: IfNotPresent
+  imagepullsecrets: regcred

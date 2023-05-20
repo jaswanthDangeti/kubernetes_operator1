@@ -1,0 +1,12 @@
+apiVersion: cache.example.com/v1alpha1
+kind: Ansidevelopment
+metadata:
+  labels:
+    app.kubernetes.io/name: ansidevelopment
+    app.kubernetes.io/instance: ansidevelopment-sample
+    app.kubernetes.io/part-of: ansible-development-op
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: ansible-development-op
+  name: ansidevelopment-sample
+spec:
+  # TODO(user): Add fields here

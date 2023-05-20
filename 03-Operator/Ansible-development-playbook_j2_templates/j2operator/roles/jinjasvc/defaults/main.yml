@@ -1,0 +1,5 @@
+---
+deployment: jinja
+size: 1
+image: nginx
+port: 80

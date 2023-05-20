@@ -1,0 +1,6 @@
+- name: Create a K8s namespace
+  kubernetes.core.k8s:
+    name: jinja
+    api_version: v1
+    kind: Namespace
+    state: "{{ state }}"

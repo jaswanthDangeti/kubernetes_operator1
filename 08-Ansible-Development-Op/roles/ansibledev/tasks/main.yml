@@ -1,0 +1,5 @@
+---
+# tasks file for Ansibledev
+- include: namespace.yml
+- include: service.yml
+- include: deployment.yml

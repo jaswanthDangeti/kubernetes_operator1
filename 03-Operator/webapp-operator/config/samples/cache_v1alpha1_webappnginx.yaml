@@ -1,0 +1,14 @@
+apiVersion: cache.example.com/v1alpha1
+kind: Webappnginx
+metadata:
+  labels:
+    app.kubernetes.io/name: webappnginx
+    app.kubernetes.io/instance: webappnginx-sample
+    app.kubernetes.io/part-of: webapp-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: webapp-operator
+  name: webappnginx-sample
+spec:
+  size: 2
+  image: "nginx"
+  secret: regcred

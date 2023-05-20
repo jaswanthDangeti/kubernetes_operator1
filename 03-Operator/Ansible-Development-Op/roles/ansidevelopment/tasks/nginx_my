@@ -1,0 +1,28 @@
+- name: Create a Deployment from a predifined file
+  kubernetes.core.k8s:
+    state: present
+    definition:
+      api_version: apps/v1
+      kind: Deployment
+      metadata:
+        name: nginxapp
+        namespace: ansidev
+        labels:
+          app: nginx
+      spec:
+        replicas: 3
+        selector:
+           matchLabels:
+             app: nginx
+        template:
+           metadata:
+             labels:
+               app: nginx
+           spec:
+             containers:
+             - name: nginx
+               image: nginx
+               imagePullPolicy: IfNotPresent
+               ports:
+               - name: node-port
+                 containerPort: 80

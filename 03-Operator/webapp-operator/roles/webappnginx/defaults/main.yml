@@ -1,0 +1,5 @@
+---
+# defaults file for Webappnginx
+size: 2
+image: nginx
+port: 80

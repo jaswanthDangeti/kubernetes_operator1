@@ -1,0 +1,32 @@
+root@master:~# operator-sdk run bundle -n operators ttl.sh/amitvashist7-configmap-operator-bundle:v2.0.0 --timeout=15m
+INFO[0019] Creating a File-Based Catalog of the bundle "ttl.sh/amitvashist7-configmap-operator-bundle:v2.0.0" 
+INFO[0021] Generated a valid File-Based Catalog         
+INFO[0028] Created registry pod: ttl-sh-amitvashist7-configmap-operator-bundle-v2-0-0 
+INFO[0028] Created CatalogSource: operator-testing-catalog 
+INFO[0028] Created Subscription: operator-testing-v2-0-0-sub 
+INFO[0030] Approved InstallPlan install-gd5zb for the Subscription: operator-testing-v2-0-0-sub 
+INFO[0030] Waiting for ClusterServiceVersion "operators/operator-testing.v2.0.0" to reach 'Succeeded' phase 
+INFO[0030]   Waiting for ClusterServiceVersion "operators/operator-testing.v2.0.0" to appear 
+INFO[0048]   Found ClusterServiceVersion "operators/operator-testing.v2.0.0" phase: Pending 
+INFO[0049]   Found ClusterServiceVersion "operators/operator-testing.v2.0.0" phase: InstallReady 
+INFO[0050]   Found ClusterServiceVersion "operators/operator-testing.v2.0.0" phase: Installing 
+INFO[0071]   Found ClusterServiceVersion "operators/operator-testing.v2.0.0" phase: Succeeded 
+INFO[0071] OLM has successfully installed "operator-testing.v2.0.0" 
+root@master:~#
+
+
+root@master:~# operator-sdk run bundle-upgrade -n operators ttl.sh/amitvashist7-configmap-operator-bundle:v3.0.0 --timeout=15m
+INFO[0003] Found existing subscription with name operator-testing-v2-0-0-sub and namespace operators 
+INFO[0003] Found existing catalog source with name operator-testing-catalog and namespace operators 
+INFO[0072] Generated a valid Upgraded File-Based Catalog 
+INFO[0079] Created registry pod: ttl-sh-amitvashist7-configmap-operator-bundle-v3-0-0 
+INFO[0079] Updated catalog source operator-testing-catalog with address and annotations 
+INFO[0079] Deleted previous registry pod with name "ttl-sh-amitvashist7-configmap-operator-bundle-v2-0-0" 
+INFO[0081] Approved InstallPlan install-brbdq for the Subscription: operator-testing-v2-0-0-sub 
+INFO[0081] Waiting for ClusterServiceVersion "operators/operator-testing.v3.0.0" to reach 'Succeeded' phase 
+INFO[0081]   Waiting for ClusterServiceVersion "operators/operator-testing.v3.0.0" to appear 
+INFO[0099]   Found ClusterServiceVersion "operators/operator-testing.v3.0.0" phase: InstallReady 
+INFO[0100]   Found ClusterServiceVersion "operators/operator-testing.v3.0.0" phase: Installing 
+INFO[0121]   Found ClusterServiceVersion "operators/operator-testing.v3.0.0" phase: Succeeded 
+INFO[0121] Successfully upgraded to "operator-testing.v3.0.0" 
+root@master:~# 

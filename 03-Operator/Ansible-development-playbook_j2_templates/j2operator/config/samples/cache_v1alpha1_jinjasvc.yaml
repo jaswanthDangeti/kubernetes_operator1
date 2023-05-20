@@ -1,0 +1,15 @@
+apiVersion: cache.example.com/v1alpha1
+kind: Jinjasvc
+metadata:
+  labels:
+    app.kubernetes.io/name: jinjasvc
+    app.kubernetes.io/instance: jinjasvc-sample
+    app.kubernetes.io/part-of: j2operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: j2operator
+  name: jinjasvc-sample
+spec:
+  deployment: jinja
+  image: nginx
+  port: 80
+  size: 1

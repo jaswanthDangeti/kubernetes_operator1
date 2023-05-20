@@ -1,0 +1,18 @@
+---
+- include_tasks: namespace.yml
+- name: ConfigMap Example is "{{ state }}"
+  kubernetes.core.k8s:
+    definition:
+      kind: ConfigMap
+      api_version: v1
+      metadata:
+        name: test-configmap
+        namespace: test-config 
+      data:
+        key: "welcome to the world of k8s operator"
+        name: jaswanth
+        mail: abc.com
+        num: "12345"
+        num2: "23456"
+    state: "{{ state }}"
+

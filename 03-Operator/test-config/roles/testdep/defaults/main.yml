@@ -1,0 +1,5 @@
+---
+deployment: nginx 
+size: 2
+port: 80  
+image: nginx

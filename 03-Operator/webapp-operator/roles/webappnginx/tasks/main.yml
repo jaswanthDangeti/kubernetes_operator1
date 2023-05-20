@@ -1,0 +1,44 @@
+---
+- name: start webapp
+  kubernetes.core.k8s:
+    definition:
+      kind: Deployment
+      apiVersion: apps/v1
+      metadata:
+        name: '{{ ansible_operator_meta.name }}-webapp'
+        namespace: '{{ ansible_operator_meta.namespace }}'
+      spec:
+        replicas: "{{size}}"
+        selector:
+          matchLabels:
+            app: webapp
+        template:
+          metadata:
+            labels:
+              app: webapp
+          spec:
+            imagePullSecrets:
+            - name: "{{secret}}"
+            containers:
+            - name: webapp
+              image: "{{image}}"
+              imagePullPolicy: IfNotPresent
+              ports:
+                - containerPort: "{{port}}"  
+- name: start webapp service
+  kubernetes.core.k8s:
+    definition:
+      kind: Service
+      apiVersion: v1
+      metadata:
+        name: '{{ ansible_operator_meta.name }}-webapp-svc'
+        namespace: '{{ ansible_operator_meta.namespace }}'
+      spec:
+        ports:
+        - port: 80
+          protocol: TCP
+          targetPort: "{{port}}"
+        selector:
+          app: webapp
+        type: NodePort
+          

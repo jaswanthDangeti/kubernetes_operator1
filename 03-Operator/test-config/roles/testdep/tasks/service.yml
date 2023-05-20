@@ -1,0 +1,20 @@
+- name: Create a Service object from an inline definition
+  kubernetes.core.k8s:
+    state: present
+    definition:
+      apiVersion: v1
+      kind: Service
+      metadata:
+        name: web
+        namespace: test-config
+        labels:
+          app: nginx
+      spec:
+        selector:
+          app: nginx
+        ports:
+        - protocol: TCP
+          targetPort: node-port
+          port: 8000
+        type: NodePort  
+      

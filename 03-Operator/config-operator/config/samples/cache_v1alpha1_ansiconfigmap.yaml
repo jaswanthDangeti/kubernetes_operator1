@@ -1,0 +1,12 @@
+apiVersion: cache.example.com/v1alpha1
+kind: Ansiconfigmap
+metadata:
+  labels:
+    app.kubernetes.io/name: ansiconfigmap
+    app.kubernetes.io/instance: ansiconfigmap-sample
+    app.kubernetes.io/part-of: config-operator
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: config-operator
+  name: ansiconfigmap-sample
+spec:
+  # TODO(user): Add fields here

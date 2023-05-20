@@ -1,0 +1,12 @@
+apiVersion: cache.example.com/v1alpha1
+kind: TestcOnfig
+metadata:
+  labels:
+    app.kubernetes.io/name: testconfig
+    app.kubernetes.io/instance: testconfig-sample
+    app.kubernetes.io/part-of: test-config
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: test-config
+  name: testconfig-sample
+spec:
+  state: present

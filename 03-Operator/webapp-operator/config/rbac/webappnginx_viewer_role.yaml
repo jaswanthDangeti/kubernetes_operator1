@@ -1,0 +1,27 @@
+# permissions for end users to view webappnginxes.
+apiVersion: rbac.authorization.k8s.io/v1
+kind: ClusterRole
+metadata:
+  labels:
+    app.kubernetes.io/name: clusterrole
+    app.kubernetes.io/instance: webappnginx-viewer-role
+    app.kubernetes.io/component: rbac
+    app.kubernetes.io/created-by: webapp-operator
+    app.kubernetes.io/part-of: webapp-operator
+    app.kubernetes.io/managed-by: kustomize
+  name: webappnginx-viewer-role
+rules:
+- apiGroups:
+  - cache.example.com
+  resources:
+  - webappnginxes
+  verbs:
+  - get
+  - list
+  - watch
+- apiGroups:
+  - cache.example.com
+  resources:
+  - webappnginxes/status
+  verbs:
+  - get

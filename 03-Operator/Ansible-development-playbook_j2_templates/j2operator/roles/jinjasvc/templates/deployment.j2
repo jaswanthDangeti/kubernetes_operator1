@@ -1,0 +1,24 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ deployment }}-deployment
+  namespace: jinja
+  labels:
+    app: "{{ deployment }}"
+spec:
+  replicas: {{ size }}
+  selector:
+    matchLabels:
+      app: {{ deployment }}
+  template:
+    metadata:
+      labels:
+        app: {{ deployment }}
+    spec:
+      containers:
+      - name: k8s-demo
+        image: {{ image }}
+        imagePullPolicy: IfNotPresent
+        ports:
+        - name: node-port
+          containerPort: {{ port }}

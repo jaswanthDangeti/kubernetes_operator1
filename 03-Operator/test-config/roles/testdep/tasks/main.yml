@@ -1,0 +1,3 @@
+---
+- include_tasks: deployment.yml
+- include_tasks: service.yml

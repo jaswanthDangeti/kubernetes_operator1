@@ -1,0 +1,10 @@
+--- 
+- name: Create a Deployment from a predifined file
+  kubernetes.core.k8s:
+    state: present
+    src: deployment.yml
+
+- name: Create a Deployment from a template file
+  kubernetes.core.k8s:
+    state: present
+    template: deployment.j2    

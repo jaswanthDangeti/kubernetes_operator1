@@ -1,0 +1,7 @@
+--- 
+- name: Create a K8s namespace
+  kubernetes.core.k8s:
+    name: devlopment
+    api_version: v1
+    kind: Namespace
+    state: present
